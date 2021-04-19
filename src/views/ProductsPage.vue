@@ -1,13 +1,12 @@
 <template>
- <div id="page-wrap">
-    <div class="grid-wrap">
+ <div id="page-wrap"> 
        <ProductsGrid :products="products"/>
-    </div>
+ 
   </div>
 </template>
 
 <script>
-import {products} from '../fake-data';
+import axios from 'axios'; 
 import ProductsGrid from '../components/product/ProductsGrid';
 export default {
     name: 'ProductsPage',
@@ -16,8 +15,13 @@ export default {
     },
     data(){
       return {
-        products
+        products:[],
       };
+    },
+   async created() {
+      const result = await axios.get('/api/products');
+      const products = result.data;
+      this.products = products;
     }
 };
 </script> 
