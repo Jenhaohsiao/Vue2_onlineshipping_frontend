@@ -1,27 +1,28 @@
 <template>
- <div id="page-wrap"> 
-       <ProductsGrid :products="products"/>
- 
+  <div id="page-wrap">
+    <ProductsGrid :products="products" />
   </div>
 </template>
 
 <script>
-import axios from 'axios'; 
-import ProductsGrid from '../components/product/ProductsGrid';
+import axios from 'axios';
+import ProductsGrid from '../components/ProductsGrid.vue';
+
 export default {
     name: 'ProductsPage',
-    components:{
+    components: {
       ProductsGrid,
     },
-    data(){
+    data() {
       return {
-        products:[],
+        products: [],
       };
     },
-   async created() {
+    async created() {
       const result = await axios.get('/api/products');
       const products = result.data;
       this.products = products;
     }
 };
-</script> 
+</script>
+
