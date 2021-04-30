@@ -15,6 +15,14 @@ export default {
 }
 </script>
 
+<style lang="scss">
+ 
+h1{
+  color:$mainColor,
+  
+}
+</style>
+
 <style scoped>
   #nav-bar {
     border-bottom: 1px solid #ddd;
