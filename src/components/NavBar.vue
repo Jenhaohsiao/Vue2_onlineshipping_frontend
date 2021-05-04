@@ -4,8 +4,9 @@
       <h1>FABULOUS FOOTWEAR</h1>
     </router-link>
     <router-link to="/cart" id="cart-link">
-      <button>Shopping Cart</button>
+        <b-button variant="outline-primary">Shopping Cart</b-button>
     </router-link>
+ 
   </div>
 </template>
 
