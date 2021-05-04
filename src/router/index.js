@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import CartPage from '../views/CartPage.vue';
+import UserProfile from '../views/UserProfile';
 import ProductDetailPage from '../views/ProductDetailPage.vue';
 import ProductsPage from '../views/ProductsPage.vue';
 import NotFoundPage from '../views/NotFoundPage.vue';
 import {
   BootstrapVue,
-  IconsPlugin
+  IconsPlugin,
 } from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -20,24 +21,34 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
 const routes = [{
-  path: '/products',
-  name: 'Products',
-  component: ProductsPage,
-}, {
-  path: '/products/:id',
-  name: 'ProductDetail',
-  component: ProductDetailPage,
-}, {
-  path: '/cart',
-  name: 'Cart',
-  component: CartPage,
-}, {
-  path: '/',
-  redirect: '/products',
-}, {
-  path: '*',
-  component: NotFoundPage,
-}]
+    path: '/products',
+    name: 'Products',
+    component: ProductsPage,
+  },
+  {
+    path: '/products/:id',
+    name: 'ProductDetail',
+    component: ProductDetailPage,
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: CartPage,
+  },
+  {
+    path: '/user-profile',
+    name: 'User Profile',
+    component: UserProfile,
+  },
+  {
+    path: '/',
+    redirect: '/products',
+  },
+  {
+    path: '*',
+    component: NotFoundPage,
+  }
+]
 
 const router = new VueRouter({
   mode: 'history',

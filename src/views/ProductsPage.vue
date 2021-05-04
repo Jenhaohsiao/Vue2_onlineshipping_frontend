@@ -1,5 +1,5 @@
 <template>
-  <div id="page-wrap">
+  <div class="mx-auto" id="page-wrap">
     <ProductsGrid :products="products" />
   </div>
 </template>
